@@ -1,12 +1,14 @@
 #this is a comment
-myexe : functions_v1.o functions_v2.o functions_v3.o myshell.o
-	gcc  functions_v1.o functions_v2.o functions_v3.o myshell.o -o myexe
+myexe : functions_v1.o functions_v2.o functions_v3.o functions_v4.o myshell.o
+	gcc  functions_v1.o functions_v2.o functions_v3.o functions_v4.o myshell.o -o myexe
 functions_v1.o: functions_v1.c myshell.h
 	gcc -c -I. functions_v1.c 
 functions_v2.o: functions_v2.c myshell.h
 	gcc -c -I. functions_v2.c 
 functions_v3.o: functions_v3.c myshell.h
 	gcc -c -I. functions_v3.c
+functions_v4.o: functions_v4.c myshell.h
+	gcc -c -I. functions_v4.c
 myshell.o: myshell.c myshell.h
 	gcc -c -I.  myshell.c 
 clean:

@@ -14,5 +14,5 @@ void execute_piped_cmd(char *arglist[]);
 void trim(char * str);
 
 // version4 functions
-void set_history(char* cmdline);
-char* get_history(int index);
+void set_hist(char* cmdline);
+char* get_hist(int index);

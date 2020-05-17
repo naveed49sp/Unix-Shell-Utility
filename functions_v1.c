@@ -42,6 +42,19 @@ int execute(char* arglist[]){
    }
 }
 char** tokenize(char* cmdline){
+	
+	if (cmdline[0] == '!') {
+      int search_index = atoi(cmdline+1);
+      char* cmd = get_hist(search_index);
+      if (cmd == NULL) {
+         return NULL;
+      } else {
+         return tokenize(cmd);
+      }
+   }
+   if (cmdline[0] != '\0') {
+      set_hist(cmdline);
+   }
 //allocate memory
    char** arglist = (char**)malloc(sizeof(char*)* (MAXARGS+1));
    for(int j=0; j < MAXARGS+1; j++){

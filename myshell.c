@@ -20,7 +20,7 @@
 #define MAX_LEN 512
 #define MAXARGS 10
 #define ARGLEN 30
-#define HISTORY_LEN 5
+#define HISTLEN 10
 #define PROMPT "MSCSF19M521shell:- "
 
 // version4 global variables
@@ -32,6 +32,11 @@ int main(){
    char** arglist;
    char* prompt = PROMPT; 
    char* command;
+   //allocate memory to history
+   history =(char**) malloc(sizeof(char*) * HISTLEN + 1);
+   for (int i=0; i < HISTLEN; i++) {
+      history[i] = malloc(sizeof(char) * MAX_LEN);
+   }
    while((cmdline = read_cmd(prompt,stdin)) != NULL){
    	  command = strtok(cmdline, ";");
    	  while(command != NULL){

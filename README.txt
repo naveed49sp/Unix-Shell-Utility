@@ -17,3 +17,4 @@ Use following commands to test the working.
 > "cat /etc/passwd | wc" will print the count on stdout
 > " ls ; ls -l" it will execute multiple commands on single line separated by semicolon
 > "ctrl + D" it will terminate the program
+version 04 stores history of commands
