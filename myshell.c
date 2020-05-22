@@ -1,9 +1,6 @@
 /*
 
-*  myshellv3.c: 
-*  It handles i/o redirection
-*  use of pipes
-*  semicolon separated multiple commands on single line.
+*  This is the driver program
 */
 
 #include <stdio.h>

@@ -15,31 +15,31 @@
 
 
 char** history;
-int last_index = 0;
+int size = 0;
 
 void set_hist(char* cmdline)
 {
-	int index;
-	if(last_index>=HISTLEN)
-		index = last_index % 10;
-	else
-		index = last_index;
-   strncpy(history[index], cmdline, MAX_LEN);
-   last_index++;
+	if(size !=0){// make room for new command
+		for(int i = size; i>=1; i--){
+			strcpy(history[i], history[i-1]);
+		}
+	}
+	
+	strncpy(history[0], cmdline, MAX_LEN); //copy new command in the start index
+	size++;
 }
 
-char* get_hist(int index)
+char* get_hist(int ind)
 {
-   if (index== -1) { //user want to execute last command
-      index = last_index;
+   if (ind == -1) { //user want to execute last command
+      ind = 0;
    }
-   if(index > last_index){
+   if(ind > size){
    	     return NULL;
    }
    
    	char* cmdline = (char*)malloc(sizeof(char*) * MAX_LEN);
-    strncpy(cmdline, history[index], MAX_LEN);
+    strncpy(cmdline, history[ind], MAX_LEN);
     return cmdline;
-
 }
 

@@ -1,3 +1,5 @@
+all versions are implemented in different files.
+functions_v1.c contains the functions which are used to implement version01, functions_v2.c contains those functions which are used to implement version 2 and so on.
 version 01 is almost same as discussed in video lecture
 version 02 can perform i/o redirection. 
 	> for i/o redirection "infile.txt" and "outfile.txt" should present in cwd
